@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <numeric>
 using namespace std;
 
 int main(){
@@ -110,6 +111,27 @@ int main(){
         cout << *i << " ";
     }
     Area1.insert(Area1.begin(),2);
+
+/*III. Create vector*/
+    /*3.1 a vector like an array.*/
+    vector<int> vec_type1 = {1,2,3,4,5};
+
+    /*3.2 Specifying size and initializing all values from array*/
+    int arr [] = {1,2,3,4,5};
+    int n = sizeof(arr);
+    vector<int> vector_type2 = {arr, arr + n};
+
+    /*3.3 Init vector from another vector*/
+    vector<int> vec_type3(vec_type1.begin(),vec_type1.end());
+
+    /*3.4 init using fill() function*/
+    int value_4 = 10;
+    vector<int> vec_type4(4);
+    fill(vec_type4.begin(),vec_type4.end(),value_4);  /* output: 10 10 10 10*/
+
+    /*3.5  init using iota() */
+    vector<int> vec_type5(5);
+    iota (vec_type5.begin(), vec_type5.end(), 2);
 
     return 0;
 }
